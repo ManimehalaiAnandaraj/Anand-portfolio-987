@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: theme("colors.paper");
+  color: theme("colors.ink");
+  font-family: theme("fontFamily.sans");
+}
+
+::selection {
+  background: theme("colors.brass-light");
+  color: theme("colors.navy-deep");
+}
+
+.guilloche {
+  background-image: repeating-linear-gradient(
+      115deg,
+      rgba(184, 144, 46, 0.16) 0px,
+      rgba(184, 144, 46, 0.16) 1px,
+      transparent 1px,
+      transparent 10px
+    ),
+    repeating-linear-gradient(
+      65deg,
+      rgba(184, 144, 46, 0.1) 0px,
+      rgba(184, 144, 46, 0.1) 1px,
+      transparent 1px,
+      transparent 10px
+    );
+}
+
+.guilloche-dark {
+  background-image: repeating-linear-gradient(
+      115deg,
+      rgba(227, 198, 120, 0.1) 0px,
+      rgba(227, 198, 120, 0.1) 1px,
+      transparent 1px,
+      transparent 10px
+    ),
+    repeating-linear-gradient(
+      65deg,
+      rgba(227, 198, 120, 0.07) 0px,
+      rgba(227, 198, 120, 0.07) 1px,
+      transparent 1px,
+      transparent 10px
+    );
+}
+
+.stamp {
+  border: 2px dashed rgba(27, 31, 39, 0.55);
+  border-radius: 9999px;
+}
+
+.stamp-ring {
+  border: 1.5px solid rgba(27, 31, 39, 0.35);
+  border-radius: 9999px;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+.ledger-row + .ledger-row {
+  border-top: 1px solid theme("colors.line");
+}
