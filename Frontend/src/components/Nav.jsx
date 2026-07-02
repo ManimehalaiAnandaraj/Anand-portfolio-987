@@ -21,7 +21,7 @@ export default function Nav() {
           <img
             src={logo}
             alt="Logo"
-            className="w-25 h-20 object-contain"
+            className="w-30 h-20 object-contain"
           />
           <span>
             A.N <span className="text-brass">— Career Statement</span>
